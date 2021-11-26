@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  ap:
+    build: ./
+    container_name: ap
+    cap_add:
+      - SYS_MODULE
+    privileged: true
+    environment: 
+      - INTERFACE=wlan0
+      - OUTGOINGS=eth0
+      - WPA_PASSPHRASE=password
+    network_mode: "host"
+    restart: unless-stopped
