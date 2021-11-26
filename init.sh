@@ -49,7 +49,7 @@ EOF
 echo "Configuring dnsmasq..."
 cat > "/etc/dnsmasq.conf" <<EOF
 interface=${INTERFACE}
-dhcp-range=${SUBNET::-1}1,${SUBNET::-1}254,255.255.255.0,12h
+dhcp-range=${SUBNET::-1}2,${SUBNET::-1}254,255.255.255.0,12h
 EOF
 
 echo "Setting interface ${INTERFACE}"
